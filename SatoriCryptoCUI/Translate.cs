@@ -11,20 +11,21 @@ namespace SatoriCryptoCUI
         {
             if (!Directory.Exists(translateFileDirectory)) return;
             string translateFile = Path.Combine(translateFileDirectory, lang + ".json");
+            if (!File.Exists(translateFile)) return;
 
             try
             {
                 using (StreamReader reader = File.OpenText(translateFile))
                 {
-                    if (File.Exists(translateFile)) parsedTranslateJson = JObject.Parse(reader.ReadToEnd());
+                    parsedTranslateJson = JObject.Parse(reader.ReadToEnd());
                     reader.Dispose();
                 }
             }
-            catch (JsonReaderException jsrEx)
+            catch (JsonReaderException)
             {
                 Console.WriteLine("[X] Cannot translate because translate file '{0}' contains invalid JSON.", lang + ".json");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("[X] Cannot translate because throwed exception when reading translate file '{0}'.", lang + ".json");
             }

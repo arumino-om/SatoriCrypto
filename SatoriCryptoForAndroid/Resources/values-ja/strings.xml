@@ -1,0 +1,8 @@
+﻿<resources>
+	<string name="app_name">SatoriCryptoForAndroid</string>
+	<string name="title_encrypt">暗号化</string>
+	<string name="title_decrypt">復号化</string>
+	<string name="encrypt_guide">暗号化するファイルと多重暗号化方法を選択してください。</string>
+	<string name="button_select_file">ファイルを選択</string>
+	<string name="label_encrypt_type">多重暗号化方法:</string>
+</resources>

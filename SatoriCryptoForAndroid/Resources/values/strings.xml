@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SatoriCryptoForAndroid</string>
+	<string name="title_encrypt">Encrypt</string>
+	<string name="title_decrypt">Decrypt</string>
+	<string name="encrypt_guide">Select the file want you to encrypt and the superencryption mode.</string>
+	<string name="button_select_file">Select the file</string>
+	<string name="label_encrypt_type">Superencryption mode:</string>
+</resources>

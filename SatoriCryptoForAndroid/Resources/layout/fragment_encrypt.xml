@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+    <TextView
+        android:text="@string/encrypt_guide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@id/textView1"
+        android:paddingBottom="10dp" />
+    <Button
+        android:text="@string/button_select_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/select_encrypt_file_button"
+        android:backgroundTint="@color/colorSubButton" />
+    <TextView
+        android:text="@string/label_encrypt_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/superencryption_mode"
+        android:spinnerMode="dropdown" />
+</LinearLayout>

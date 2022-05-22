@@ -109,21 +109,29 @@ namespace SatoriCryptoCUI
                         argsInfo.RequiredDecrypt = true;
                         break;
                     
-                    case "-s":
-                    case "--superenc-mode":
-                        argsInfo.SuperencryptionMode = arg switch
-                        {
-                            "none" => SuperencryptionMode.None,
-                            "pxf2key" => SuperencryptionMode.PxF2Key,
-                            "aes" => SuperencryptionMode.AES,
-                            "pxaes" => SuperencryptionMode.PxAES,
-                            _ => argsInfo.SuperencryptionMode
-                        };
-                        break;
-                    
                     case "-p":
                     case "--password":
                         argsInfo.Password = arg;
+                        break;
+
+                    case "-s":
+                    case "--superenc-mode":
+                        // 次の引数に多重暗号化方式が指定されていると考え、
+                        // この時点では何もしない。
+                        break;
+
+                    default:
+                        if (previousArg == "-s" || previousArg == "--superenc-mode")
+                        {
+                            argsInfo.SuperencryptionMode = arg switch
+                            {
+                                "none" => SuperencryptionMode.None,
+                                "pxf2key" => SuperencryptionMode.PxF2Key,
+                                "aes" => SuperencryptionMode.AES,
+                                "pxaes" => SuperencryptionMode.PxAES,
+                                _ => argsInfo.SuperencryptionMode
+                            };
+                        }
                         break;
                 }
                 if (!arg.StartsWith("-")) argsInfo.FilePath = arg;
